@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-size: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin: 2rem 0 4rem 0;
+}
+
+.container {
+    max-width: 1365px;
+    margin: 6rem auto;
+    transition: 0.4s;
+    /* position: relative;
+    top: 3rem; */
+}
+
+.accordion-item {
+    margin: 1rem;
+}
+
+.accordion-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    color: white;
+}
+
+.green {
+    background-color: #40c085;
+}
+
+.lgreen {
+    background-color: #e8f6f0;
+}
+
+.red {
+    background-color: #f93e3e;
+}
+
+.lred {
+    background-color: #fae7e7;
+}
+
+.blue {
+    background-color: #2885e3;
+}
+
+.lblue {
+    background-color: #ebf3fb;
+}
+
+.orange {
+    background-color: #fca130;
+}
+
+.lorange {
+    background-color: #fbf1e6;
+}
+
+.violet {
+    background-color: #980298;
+}
+
+.lviolet {
+    background-color: #f9e7f9;
+}
+
+/* .accordion-title:hover {
+    background-color: #3ab4cc;
+} */
+
+.accordion-title,
+.accordion-content {
+    padding: 1rem;
+    box-shadow: 7px 6px 12px 0px #dfdcdc;
+    font-size: 0.95rem;
+}
+.accordion-content {
+    transition: 0.3s;
+}
+
+
+@media screen and (max-width: 700px) {
+    body {
+        font-size: 18px;
+    }
+
+    .accordion {
+        width: 90%;
+    }
+}
+
+.card {
+    margin-bottom: 2rem;
+}
+
+hr {
+    background-color: #bebebe;
+    height: 1px;
+    border: 1px solid #bebebe;
+}
+
+.heading {
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.navbar {
+    position: fixed;
+    height: 4rem;
+    background-color: black;
+    color: #00ff30;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1rem 5rem;
+    font-size: 2rem;
+    z-index: 1000;
+}
+
+.nav_title {
+    position: relative;
+    cursor: pointer;
+}
+
+.head {
+    font-weight: 500;
+    margin: 1rem 0rem;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+textarea {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+}
+
+.textarea {
+    width: 100%;
+    background-color: black;
+    padding: 0.35rem;
+    color: white;
+    height: 2rem;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+
+.textarea-l {
+    height: 20em;
+    width: 100%;
+    background-color: white;
+    padding: 0.35rem;
+    color: black;
+    border-radius: 3px;
+    border: 1px solid black;
+    /* border: none; */
+}
+
+.textarea-m {
+    width: 100%;
+    background-color: black;
+    padding: 0.35rem;
+    color: white;
+    height: 20rem;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+
+.textarea-s {
+    width: 25%;
+    background-color: white;
+    padding: 0.35rem;
+    color: black;
+    height: 2rem;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+
+.execute {
+    width: 100%;
+    color: white;
+    margin: 1rem 0rem;
+    background-color: rebeccapurple;
+    padding: 0.5rem;
+    border: 2px solid rebeccapurple;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 1.02rem;
+    transition: .3s;
+}
+
+.execute:hover {
+    background-color: white;
+    color: black;
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+table {
+    width: 100%;
+}
+
+.divarea {
+    display: grid;
+    height: 20em;
+    width: 98%;
+    background-color: black;
+    padding: 0.35rem;
+    color: white;
+    border-radius: 3px;
+    /* border: 1px solid black; */
+    overflow-y: scroll;
+}
+
+.divarea-2{
+    display: grid;
+    margin: 1rem 0rem;
+    
+}
