@@ -115,6 +115,11 @@ hr {
   margin-bottom: 1rem;
   font-weight: 500;
 }
+.subheading {
+  font-size: 14px;
+  color: grey;
+  font-weight: 300;
+}
 
 .navbar {
   position: fixed;

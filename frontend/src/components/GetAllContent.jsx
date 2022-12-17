@@ -2,12 +2,14 @@ import React from "react"
 import useQueryBuilder from "../hooks/useQueryBuilder"
 import Accordion from "./Accordion"
 
-const GetContent = ({ name, url, method }) => {
+const GetContent = ({ name, url, method, desc }) => {
   const { state, status, handleFetch } = useQueryBuilder({ url, method })
 
   return (
     <div className="card">
-      <div className="heading">{name}</div>
+      <div className="heading">
+        {name} <span className="subheading">| {desc}</span>
+      </div>
       <hr />
       <Accordion method={method}>
         <div className="accordion-content lblue">

@@ -2,13 +2,15 @@ import React, { useState } from "react"
 import useQueryBuilder from "../hooks/useQueryBuilder"
 import Accordion from "./Accordion"
 
-const DelContent = ({ url, method, name }) => {
+const DelContent = ({ url, method, name, desc }) => {
   const [id, setId] = useState("")
   const { state, status, handleFetch } = useQueryBuilder({ url, method, id })
 
   return (
     <div className="card">
-      <div className="heading">{name}</div>
+      <div className="heading">
+        {name} <span className="subheading">| {desc}</span>
+      </div>
       <hr />
       <Accordion method={method}>
         <div className="accordion-content lred">

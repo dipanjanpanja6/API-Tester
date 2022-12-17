@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import useQueryBuilder from "../hooks/useQueryBuilder"
 import Accordion from "./Accordion"
 
-const PutContent = ({ url, method, name }) => {
+const PutContent = ({ url, method, name, desc }) => {
   const [id, setId] = useState("")
   const [text, setText] = useState(
     JSON.stringify(
@@ -27,7 +27,9 @@ const PutContent = ({ url, method, name }) => {
 
   return (
     <div className="card">
-      <div className="heading">{name}</div>
+      <div className="heading">
+        {name} <span className="subheading">| {desc}</span>
+      </div>
       <hr />
       <Accordion method={method}>
         <div className="accordion-content lorange">

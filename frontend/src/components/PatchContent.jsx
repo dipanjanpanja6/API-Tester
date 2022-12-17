@@ -2,14 +2,16 @@ import React, { useState } from "react"
 import useQueryBuilder from "../hooks/useQueryBuilder"
 import Accordion from "./Accordion"
 
-const PatchContent = ({ url, method, name }) => {
+const PatchContent = ({ url, method, name, desc }) => {
   const [id, setId] = useState("")
   const [text, setText] = useState("")
   const { state, status, handleFetch } = useQueryBuilder({ url, method, id, headers: { "Content-Type": "application/json" }, body: text })
 
   return (
     <div className="card">
-      <div className="heading">{name}</div>
+      <div className="heading">
+        {name} <span className="subheading">| {desc}</span>
+      </div>
       <hr />
       <Accordion method={method}>
         <div className="accordion-content lviolet">

@@ -1,8 +1,9 @@
 import { useState } from "react"
 
+const initialData = { data: null, message: "", desc: null }
 export default function useQueryBuilder({ url, method, id, headers, body }) {
   const [status, setStatus] = useState()
-  const [state, setState] = useState({ data: null, message: "", desc: null })
+  const [state, setState] = useState(initialData)
 
   const urlBuilder = (url, id) => {
     if (id) return url.replace(":id", id)
@@ -11,6 +12,8 @@ export default function useQueryBuilder({ url, method, id, headers, body }) {
   const handleFetch = async e => {
     try {
       e.preventDefault()
+      setState(initialData)
+
       const response = await fetch(urlBuilder(url, id), { method, headers, body })
       const json = await response.json()
       setStatus(response.status)
@@ -20,7 +23,7 @@ export default function useQueryBuilder({ url, method, id, headers, body }) {
         setState({ data: null, message: json.message, desc: "Failed" })
       }
     } catch (error) {
-      setState({ data: null, desc: "Failed" })
+      setState({ data: null, message: "", desc: "Failed" })
       console.error(error)
     }
   }
