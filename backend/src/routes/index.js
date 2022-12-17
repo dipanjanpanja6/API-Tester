@@ -1,10 +1,7 @@
 const Router = require("express").Router()
-const employee = require("../controllers/emplyeeController")
+const employee = require("../controllers/employeeController")
 
-Router.post("/createEmployee", employee.create)
-Router.get("/getEmployeeList", employee.read)
-Router.put("/updateEmployee/:employeeId", employee.update)
-Router.patch("/updateEmployeeByPatch/:employeeId", employee.updatePatch)
-Router.delete("/deleteEmployee/:employeeId", employee.deleteData)
+Router.route("/employees").get(employee.index).post(employee.store)
+Router.route("/employees/:id").get(employee.show).put(employee.update).patch(employee.update).delete(employee.destroy)
 
 module.exports = Router
