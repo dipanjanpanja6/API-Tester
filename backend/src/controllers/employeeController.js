@@ -100,23 +100,20 @@ const update = async (req, res) => {
       if (!employeeZipCode) return res.status(400).send({ message: "Employee Zip Code is required" })
       if (!employeeSalary) return res.status(400).send({ message: "Employee salary is required" })
     }
-    const employee = await Employee().where({ employeeId }).update(
-      {
-        employeeFirstName,
-        employeeLastName,
-        employeeEmail,
-        employeeJoiningDate,
-        employeePayrollDate,
-        employeeHouseNumber,
-        employeeStreetNumber,
-        employeeCity,
-        employeeState,
-        employeeZipCode,
-        employeeSalary,
-      },
-      "*"
-    )
-    if (!employee.length) return res.status(400).send({ message: "Employee Id does not exist" })
+    const employee = await Employee().where({ employeeId }).update({
+      employeeFirstName,
+      employeeLastName,
+      employeeEmail,
+      employeeJoiningDate,
+      employeePayrollDate,
+      employeeHouseNumber,
+      employeeStreetNumber,
+      employeeCity,
+      employeeState,
+      employeeZipCode,
+      employeeSalary,
+    })
+    if (!employee) return res.status(400).send({ message: "Employee Id does not exist" })
 
     return res.send({ message: "Employee data update successfully", data: employee[0] })
   } catch (error) {
